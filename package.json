@@ -4,7 +4,9 @@
   "description": "This repo is created for the Technical assessment for TenTwenty job application for a SQA role.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:bdd": "bddgen && playwright test --project=bdd",
+    "test:bdd:headed": "bddgen && playwright test --project=bdd --headed --workers=1"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,9 @@
   "homepage": "https://github.com/SuryaSetti/TenTwenty-Test#readme",
   "devDependencies": {
     "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "pdf-parse": "^2.4.5",
+    "playwright-bdd": "^9.2.1",
     "typescript": "^7.0.2"
   }
 }

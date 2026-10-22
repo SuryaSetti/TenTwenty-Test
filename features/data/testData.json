@@ -1,0 +1,288 @@
+{
+  "TC01": {
+    "description": "standard_user adds Sauce Labs Backpack to the cart",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "add to cart", "item": "Sauce Labs Backpack" },
+    "expected": { "type": "cart count", "value": "1" }
+  },
+  "TC02": {
+    "description": "problem_user adds Sauce Labs Bike Light to the cart",
+    "username": "problem_user",
+    "password": "secret_sauce",
+    "action": { "type": "add to cart", "item": "Sauce Labs Bike Light" },
+    "expected": { "type": "cart count", "value": "1" }
+  },
+  "TC03": {
+    "description": "performance_glitch_user adds Sauce Labs Onesie to the cart",
+    "username": "performance_glitch_user",
+    "password": "secret_sauce",
+    "action": { "type": "add to cart", "item": "Sauce Labs Onesie" },
+    "expected": { "type": "cart count", "value": "1" }
+  },
+  "TC04": {
+    "description": "error_user adds Sauce Labs Backpack to the cart",
+    "username": "error_user",
+    "password": "secret_sauce",
+    "action": { "type": "add to cart", "item": "Sauce Labs Backpack" },
+    "expected": { "type": "cart count", "value": "1" }
+  },
+  "TC05": {
+    "description": "standard_user sorts products by price low to high",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "sort products by", "item": "Price (low to high)" },
+    "expected": { "type": "prices ascending" }
+  },
+  "TC06": {
+    "description": "standard_user sorts products by name Z to A",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "sort products by", "item": "Name (Z to A)" },
+    "expected": { "type": "names descending" }
+  },
+  "TC07": {
+    "description": "standard_user logs out and returns to the login page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Logout" },
+    "expected": { "type": "page", "page": "Login", "elements": ["username field", "password field", "login button", "credentials box", "password hint"] }
+  },
+  "TC08": {
+    "description": "Menu > All Items opens the inventory page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "All Items" },
+    "expected": {
+      "type": "page",
+      "page": "Inventory",
+      "elements": ["menu button", "cart link", "title", "sort dropdown", "product list", "first product name", "first product price", "first add to cart button", "footer", "social links", "footer text"]
+    }
+  },
+  "TC09": {
+    "description": "Menu > Dynamic Catalog > Lazy Load opens the lazy load page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Lazy Load" },
+    "expected": {
+      "type": "page",
+      "page": "Lazy Load",
+      "elements": ["menu button", "cart link", "title", "catalog container", "first item image", "first item name", "first item price"]
+    }
+  },
+  "TC10": {
+    "description": "Menu > Dynamic Catalog > Spinner opens the spinner page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Spinner" },
+    "expected": {
+      "type": "page",
+      "page": "Spinner",
+      "elements": ["menu button", "cart link", "title", "catalog grid", "first item image", "first item name", "first item price", "footer", "social links", "footer text"]
+    }
+  },
+  "TC11": {
+    "description": "Menu > Dynamic Catalog > Slider opens the slider page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Slider" },
+    "expected": {
+      "type": "page",
+      "page": "Slider",
+      "elements": ["menu button", "cart link", "title", "slider item", "item image", "item name", "item price", "slider dots", "first dot", "footer", "social links", "footer text"]
+    }
+  },
+  "TC12": {
+    "description": "Menu > About opens the Sauce Labs site",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "About" },
+    "expected": { "type": "page", "page": "About", "elements": ["page heading"] }
+  },
+  "TC13": {
+    "description": "Menu > Logout opens the login page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Logout" },
+    "expected": { "type": "page", "page": "Login", "elements": ["username field", "password field", "login button", "credentials box", "password hint"] }
+  },
+  "TC14": {
+    "description": "Clicking a product name opens its details page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open product", "item": "Sauce Labs Backpack" },
+    "expected": {
+      "type": "page",
+      "page": "Product Details",
+      "elements": ["menu button", "cart link", "back to products button", "product image", "product name", "product description", "product price", "add to cart button", "footer", "social links", "footer text"]
+    }
+  },
+  "TC15": {
+    "description": "Locked out user cannot log in",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expected": { "type": "error", "value": "Sorry, this user has been locked out." }
+  },
+  "TC16": {
+    "description": "Valid user with wrong password cannot log in",
+    "username": "standard_user",
+    "password": "wrong_pass",
+    "expected": { "type": "error", "value": "Username and password do not match any user in this service" }
+  },
+  "TC17": {
+    "description": "Unknown user cannot log in",
+    "username": "nobody",
+    "password": "secret_sauce",
+    "expected": { "type": "error", "value": "Username and password do not match any user in this service" }
+  },
+  "TC18": {
+    "description": "Empty username is rejected",
+    "username": "",
+    "password": "secret_sauce",
+    "expected": { "type": "error", "value": "Username is required" }
+  },
+  "TC19": {
+    "description": "Empty password is rejected",
+    "username": "standard_user",
+    "password": "",
+    "expected": { "type": "error", "value": "Password is required" }
+  },
+  "TC20": {
+    "description": "Username is case sensitive",
+    "username": "Standard_User",
+    "password": "secret_sauce",
+    "expected": { "type": "error", "value": "Username and password do not match any user in this service" }
+  },
+  "TC21": {
+    "description": "BUG: inventory product descriptions show raw code text (allTheThings())",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "All Items" },
+    "expected": { "type": "no code text", "field": "description", "value": "allTheThings()" }
+  },
+  "TC22": {
+    "description": "BUG: inventory product names show raw code text (allTheThings())",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "All Items" },
+    "expected": { "type": "no code text", "field": "name", "value": "allTheThings()" }
+  },
+  "TC23": {
+    "description": "BUG: lazy load page repeats the same item in different sizes",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Lazy Load" },
+    "expected": { "type": "no duplicate lazy items" }
+  },
+  "TC24": {
+    "description": "BUG: lazy load page keeps adding items forever while scrolling",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Lazy Load" },
+    "expected": { "type": "lazy load stops growing" }
+  },
+  "TC25": {
+    "description": "BUG: clicking a lazy load item does not open its details page",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Lazy Load" },
+    "expected": { "type": "lazy item opens details" }
+  },
+  "TC26": {
+    "description": "BUG: lazy load page has no add to cart button",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Lazy Load" },
+    "expected": { "type": "add to cart button", "page": "Lazy Load" }
+  },
+  "TC27": {
+    "description": "BUG: slider page has no add to cart button",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "action": { "type": "open menu option", "item": "Slider" },
+    "expected": { "type": "add to cart button", "page": "Slider" }
+  },
+  "TC28": {
+    "description": "Checkout: two items, valid details, order overview, finish and PDF receipt",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [
+        { "name": "Sauce Labs Backpack", "price": "$29.99" },
+        { "name": "Sauce Labs Bike Light", "price": "$9.99" }
+      ],
+      "info": { "firstName": "Surya", "lastName": "Setti", "postalCode": "560037" },
+      "totals": { "subtotal": "$39.98", "tax": "$3.20", "total": "$43.18" }
+    }
+  },
+  "TC29": {
+    "description": "Checkout: single item, valid details, order overview, finish and PDF receipt",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Onesie", "price": "$7.99" }],
+      "info": { "firstName": "Surya", "lastName": "Setti", "postalCode": "560037" },
+      "totals": { "subtotal": "$7.99", "tax": "$0.64", "total": "$8.63" }
+    }
+  },
+  "TC30": {
+    "description": "Checkout form: first name is required",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Backpack", "price": "$29.99" }],
+      "info": { "firstName": "", "lastName": "Setti", "postalCode": "560037" },
+      "totals": { "subtotal": "$29.99", "tax": "$2.40", "total": "$32.39" },
+      "error": "First Name is required"
+    }
+  },
+  "TC31": {
+    "description": "Checkout form: last name is required",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Backpack", "price": "$29.99" }],
+      "info": { "firstName": "Surya", "lastName": "", "postalCode": "560037" },
+      "totals": { "subtotal": "$29.99", "tax": "$2.40", "total": "$32.39" },
+      "error": "Last Name is required"
+    }
+  },
+  "TC32": {
+    "description": "Checkout form: postal code is required",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Backpack", "price": "$29.99" }],
+      "info": { "firstName": "Surya", "lastName": "Setti", "postalCode": "" },
+      "totals": { "subtotal": "$29.99", "tax": "$2.40", "total": "$32.39" },
+      "error": "Postal Code is required"
+    }
+  },
+  "TC33": {
+    "description": "Bug: numbers are accepted in first name and last name",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Backpack", "price": "$29.99" }],
+      "info": { "firstName": "123", "lastName": "123", "postalCode": "560037" },
+      "totals": { "subtotal": "$29.99", "tax": "$2.40", "total": "$32.39" }
+    }
+  },
+  "TC34": {
+    "description": "Bug: text is accepted in the postal code",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": { "type": "checkout" },
+    "checkout": {
+      "items": [{ "name": "Sauce Labs Backpack", "price": "$29.99" }],
+      "info": { "firstName": "Surya", "lastName": "Setti", "postalCode": "Test" },
+      "totals": { "subtotal": "$29.99", "tax": "$2.40", "total": "$32.39" }
+    }
+  }
+}
