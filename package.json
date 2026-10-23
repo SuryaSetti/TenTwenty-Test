@@ -6,7 +6,8 @@
   "scripts": {
     "test": "playwright test",
     "test:bdd": "bddgen && playwright test --project=bdd",
-    "test:bdd:headed": "bddgen && playwright test --project=bdd --headed --workers=1"
+    "test:bdd:headed": "bddgen && playwright test --project=bdd --headed --workers=1",
+    "test:tag:headed": "bddgen && playwright test --project=bdd --headed --workers=1 --grep"
   },
   "repository": {
     "type": "git",

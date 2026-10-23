@@ -1,4 +1,5 @@
-Feature: SauceDemo login and navigation
+  @surya
+  Feature: SauceDemo login and navigation
 
   Background:
     Given I am on the login page
